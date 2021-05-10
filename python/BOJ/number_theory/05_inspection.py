@@ -20,5 +20,6 @@ N개의 수가 주어졌을 때, 가능한 M을 모두 찾는 프로그램을 �
 '''
 import sys
 num = int(sys.stdin.readline())
+M = 2
 for i in range(num):
     case = int(sys.stdin.readline())

@@ -1,3 +1,4 @@
+# https://programmers.co.kr/learn/courses/30/lessons/17677
 def solution(str1, str2):
     list_str1,list_str2 =[],[]
     for s1, slice_s1 in zip(str1, str1[1:]) :   # str1 문자만 2글자씩 뽑기

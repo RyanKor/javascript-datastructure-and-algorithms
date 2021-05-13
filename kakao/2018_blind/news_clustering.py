@@ -21,8 +21,9 @@ def solution(str1, str2):
 
     list_uni = list_str1 + list_str2
     uni = len(list_uni)
-	
     if uni ==0 :
 	    return 65536
     
     return int(len(inter)/uni * 65536 )
+
+print(solution('aa1+aa2', 'AAAA12'))

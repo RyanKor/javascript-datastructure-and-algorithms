@@ -15,6 +15,8 @@
 #             if check == temp:
 #                 answer.append([i+1,j])
 #                 break
+#             else:
+#                 pass
 #     answer.sort(key=lambda x : abs(x[0]-x[1]))
 #     return answer[0]
 

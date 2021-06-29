@@ -11,12 +11,12 @@ class Queue:
     def printQueue(self):
         print(self.queue)
 
-test = Queue()
+# test = Queue()
 
-test.enqueue(1)
-test.enqueue(4)
-test.enqueue(6)
-test.enqueue(8)
-test.enqueue(10)
-test.dequeue()
-test.printQueue()
+# test.enqueue(1)
+# test.enqueue(4)
+# test.enqueue(6)
+# test.enqueue(8)
+# test.enqueue(10)
+# test.dequeue()
+# test.printQueue()

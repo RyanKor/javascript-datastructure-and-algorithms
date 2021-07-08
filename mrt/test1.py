@@ -39,3 +39,5 @@ if name == '':
     for i in range(5):
         name += str(random.randint(0, 9))
 print(name)
+
+# 참고로 2번째 알고리즘 테스트 문항은 월별 통계치를 만들어내는 SQL문이다.

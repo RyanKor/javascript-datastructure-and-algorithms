@@ -6,6 +6,7 @@ user_input = input()
 pattern = re.compile(
     '([a-z\w]+\.*)'
 )  # 'https://www.myrealtrip.com/cities?key_name=Jeju&utm_source=naver_brand'
+# (https):\/\/([\w\.]+)(\/[\w]+)\?([\w]+)=([\w]+)&([\w]+)=([\w]+) --> 전체 하나를 어떻게 삭제할 것인가?
 # 결과 값은 user_input 값을 가공해서 출력하는 형태? --> 가능하면 user_input을 변경해도 무방한가?
 # 결과값 JSON 포맷
 dic = {"protocol": "", "domain": "", "path": "", "query": []}

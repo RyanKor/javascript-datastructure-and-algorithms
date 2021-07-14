@@ -2,7 +2,7 @@
 # UTF-8 encoding when using korean
 import re, random
 
-user_input = '.......This dog........////////   \U0001f602qwfeqwef\U0001F300qwefqwef!\U0001F6FF@#$!@#%!#@$%^'  #input() # '..k'
+user_input = '.......This dog........////////   \U0001f602qwfe____________qwef\U0001F300qwefqㅂㄴㄹㅂㅈㄷwef!\U0001F6FF@#$!@#%!#@$%^'  #input() # '..k'
 
 emoji_pattern = re.compile("["
                            u"\U0001F600-\U0001F64F"  # emoticons
@@ -15,7 +15,7 @@ emoji_pattern = re.compile("["
 # 5. 이모티콘 사용된 것에 대해 찾아낸 후, _로 치환
 remove_emoji = emoji_pattern.sub('_', user_input)
 # 1. 한글, 영어, 숫자 및 특수문자 ('.','_','/') 포함 정규식 작성
-name = re.sub("[^ㄱ-ㅎ가-힣a-zA-Z0-9._/]", '', remove_emoji)
+name = re.sub("[^ㄱ-ㅎ가-힣a-zA-Z0-9\._\/]", '', remove_emoji)
 
 # 4. 특수문자 연속 사용된 경우 (2개 이상) --> 1개로 축약
 dot_pattern = re.sub("\.{2,}", '.', name)

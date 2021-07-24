@@ -16,3 +16,11 @@ class Solution:
                     break
         result.sort(key=lambda x: len(x))
         return len(result[-1])
+        # length, start = 0, 0
+        # seen = {}
+        # for idx, c in enumerate(s):
+        #     if c in seen and start <= seen[c]:
+        #         start = seen[c] + 1
+        #     length = max(length, idx-start+1)
+        #     seen[c] = idx
+        # return length

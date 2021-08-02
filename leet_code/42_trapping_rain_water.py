@@ -13,7 +13,7 @@ class Solution:
         #                 if len(stack) == 0:
         #                     break
 
-        #                 distance = i - stack[-1] - 1
+        #                 distance = i - stack[-1] - 1 # 칸 수를 세기 때문에 1을 빼준다.
 
         #                 waters = min(height[i],height[stack[-1]]) - height[top]
 
@@ -26,6 +26,7 @@ class Solution:
         if len(height) == 0:
             return 0
         # two pointer는 기본적으로 많이 풀어봤으니까 이해가 더 잘되는 것이다.
+        # 투 포인터를 사용한 문제 해결법이 이 문제 한정으로 더 직관적이다.
         volume = 0
         left, right = 0, len(height) - 1
         left_max, right_max = height[left], height[right]

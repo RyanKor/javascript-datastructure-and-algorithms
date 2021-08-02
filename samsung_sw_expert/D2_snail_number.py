@@ -44,21 +44,27 @@ for test_case in range(1, 1 + T):
     print('#{}'.format(test_case))
     N = int(input())
     my_map = [[0] * N for _ in range(N)]
-    dx = [-1, 0, 1, 0] # 좌, 상, 우, 하 - x축
-    dy = [0, 1, 0, -1] # 좌, 상, 우, 하 - y축
-    ori = 0 # 방향 뒤집기
-    y = x = 0
-    for i in range(1, 1 + N ** 2):
+
+    axis_x = [-1, 0, 1, 0]
+    axis_y = [0, 1, 0, -1]
+    x, y = 0, 0
+    direction = 0
+
+    for i in range(1, 1 + N**2):
         my_map[x][y] = i
-        if 0 <= y+dy[ori] < N and 0 <= x+dx[ori] < N and my_map[x+dx[ori]][y+dy[ori]] == 0:
-            y += dy[ori]
-            x += dx[ori]
+        if 0 <= y + axis_y[direction] < N and 0 <= x + axis_x[
+                direction] < N and my_map[x + axis_x[direction]][
+                    y + axis_y[direction]] == 0:
+            y += axis_y[direction]
+            x += axis_x[direction]
         else:
-            if ori == 3:
-                ori = 0
+            if direction == 3:
+                direction = 0
             else:
-                ori += 1
-            y += dy[ori]
-            x += dx[ori]
+                direction += 1
+
+            y += axis_y[direction]
+            x += axis_x[direction]
+
     for i in range(N):
         print(*my_map[i])

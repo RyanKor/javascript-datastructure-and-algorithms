@@ -17,7 +17,21 @@
 import sys
 
 num = int(sys.stdin.readline())
-result = []
+temp = []
+
 for i in range(num):
-    case = map(int, sys.stdin.readline().split())
-    print(case)
+    case = list(map(int, sys.stdin.readline().split()))
+    temp.append(case)
+
+# 왜 temp를 sorted(temp, key=lambda x : (x[0],x[1]))로 정렬하면 틀린 답이 나올까?
+# 정렬하는 순서가 달라지기 때문임. 아래의 경우, 먼저 앞자리로 정렬하고, 뒷자리 규칙에 의해 다시 정렬되는 형태임
+temp = sorted(temp, key=lambda x : x[0])
+temp = sorted(temp, key=lambda x : x[1])
+
+last = 0
+finished = 0
+for i in range(len(temp)):
+    if temp[i][0] >= last:
+        finished += 1
+        last = temp[i][1]
+print(finished)

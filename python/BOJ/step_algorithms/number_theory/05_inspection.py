@@ -18,8 +18,56 @@ N개의 수가 주어졌을 때, 가능한 M을 모두 찾는 프로그램을 �
 출력
 첫째 줄에 가능한 M을 공백으로 구분하여 모두 출력한다. 이때, M은 증가하는 순서이어야 한다.
 '''
+# https://www.acmicpc.net/problem/2981
+
+"""
+접근 전략
+
+A = x * M + R
+B = y * M + R
+C = z * M + R
+
+A - B = M(x - y)
+
+B - C = M(y - z)
+
+C - A = M(z - x)
+
+이 문제는 최대 공약수 M을 찾고, 해당 수의 1을 제외한 약수를 찾으면 된다.
+
+"""
 import sys
-num = int(sys.stdin.readline())
-M = 2
-for i in range(num):
-    case = int(sys.stdin.readline())
+
+n = int(sys.stdin.readline().rstrip())
+lst = []
+share = []
+answer= []
+def gdc(x,y):
+    while y:
+        x, y = y, x % y
+    return x
+
+for i in range(n):
+    num = int(sys.stdin.readline().rstrip())
+    lst.append(num)
+
+lst.sort()
+# A - B = M(x - y) 만들기
+for i in range(1, len(lst)):
+    share.append(lst[i] - lst[i-1])
+g = share[0]
+
+# 테스트 케이스 내의 최대 공약수 찾기
+for i in range(1, len(share)):
+    g = gdc(g, share[i])
+
+# 모든 약수 찾기
+for i in range(2, int(g**0.5) +1):
+    if g % i == 0:
+        answer.append(i)
+        answer.append(g//i)
+
+answer.append(g)
+answer = list(set(answer))
+answer.sort()
+print(*answer)

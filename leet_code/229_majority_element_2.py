@@ -1,0 +1,11 @@
+# https://leetcode.com/problems/majority-element-ii/
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        answer = Counter(nums)
+        result = []
+        for key, value in answer.items():
+            if value > len(nums) / 3:
+                result.append(key)
+        
+        return result

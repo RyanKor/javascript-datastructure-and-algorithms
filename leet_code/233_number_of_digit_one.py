@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/number-of-digit-one/
+# https://leetcode.com/problems/number-of-digit-one/1844
 class Solution:
     def countDigitOne(self, n: int) -> int:
         # solution 1 : Time Exeeded
